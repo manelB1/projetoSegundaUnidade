@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body class="container">
+<center>
+    <h1 class="text" >Cadastrar</h1>
+    <center/>
+<center>
+
+
+<form action="#" th:action="@{/salvar}" method="post" th:object="${produtos}">
+        <h1>CADASTRO DE PRODUTOS</h1>
+    <input type="text" th:field="*{nome}" name="nome" placeholder="Nome do Produto"/> <br/>
+    <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+    <input type="text" th:field="*{descricao}" name="descricao" placeholder="Descrição do Produto"/> <br/>
+    <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"> </p>
+    <input type="text" th:field="*{preco}" name="preco" placeholder="Preço do produto"/> <br/>
+
+    <p class="Enviar">
+   <input type="submit" name="enviar" value="Enviar">
+    </p>
+</form>
+</center>
+</body>
+</html>

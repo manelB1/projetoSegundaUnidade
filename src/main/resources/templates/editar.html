@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EDITAR PRODUTOS</title>
+    <link rel="stylesheet" href="/css/Editar.css">
+</head>
+<body class="container">
+<center>
+    <h1 class="text" >Editar</h1>
+    <center/>
+<form action="#" th:action="@{/salvar}" method="post" th:object="${produtos}">
+    ID <input type="text" th:field="*{id}" readonly> <br/>
+    NOME <input type="text" th:field="*{nome}"> <br/>
+    DESCRICAO <input type="text" th:field="*{descricao}"> <br/>
+    PREÇO <input type="number" th:field="*{preco}"> <br/>
+    <p class="Enviar">
+        <input type="submit" name="enviar" value="Enviar">
+    </p>
+
+
+</form>
+</body>
+</html>

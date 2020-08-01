@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="/css/PagInicial.css">
+    <style type="text/css">
+        table{border-spacing:0px; border-collapse: collapse }
+        td{border:1px solid #006699;padding: 0px}
+
+    a:link{
+        color: red;
+        font-family: sans-serif ;
+        text-decoration: #3498eb;
+    }
+    </style>
+
+    <style type="text/css">
+        a{text-decoration: none }
+        a{color: dodgerblue}
+
+        a:hover{text-decoration: underline }
+        a:hover{color: blue}
+
+
+
+    </style>
+
+
+</head>
+<body class="container">
+
+<center>
+<h1 class="text" >Estoque do Ronaldinho</h1>
+<center/>
+<center>
+
+    <a href="/cadastrar" class="btn btn-green"   >Adcionar Produtos</a>
+    <br />
+    </center>
+    <center>
+    <table border="4" width="500">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="produtos: ${produtosList}" th:object="${produtos}">
+            <td th:text="*{id}">ID</td>
+            <td th:text="*{nome}">Nome</td>
+            <td th:text="*{descricao}">Descrição</td>
+            <td th:text="*{preco}">Preço</td>
+            <td>
+                <a th:href="@{'/editar/' + ${produtos.id}}">  EDITAR</a> &nbsp; &nbsp; &nbsp;
+                <a th:href="@{'/deletar/' + ${produtos.id}}">  DELETAR</a>
+
+            </td>
+
+        </tr>
+
+
+        </tbody>
+
+
+    </table>
+    </center>
+
+</body>
+</html>
