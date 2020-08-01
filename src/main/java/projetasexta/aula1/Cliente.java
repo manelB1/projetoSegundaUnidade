@@ -11,5 +11,5 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String nome;
+    String name;
 }
